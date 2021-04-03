@@ -6,18 +6,21 @@ include("shared.lua")
 util.AddNetworkString( "BagszysPrinter" )
 
 function ENT:Initialize()
+	self:SetModel("models/props_c17/consolebox01a.mdl")
+	self:SetColor(self.PrntrCfg.ModelColor)
 
-self:SetUseType(SIMPLE_USE)
-self:SetModel("models/props_c17/consolebox01a.mdl")
-self:PhysicsInit(SOLID_VPHYSICS)
-self:SetMoveType(MOVETYPE_VPHYSICS)
-self:SetSolid(SOLID_VPHYSICS)
+	self:PhysicsInit(SOLID_VPHYSICS)
+	self:SetMoveType(MOVETYPE_VPHYSICS)
+	self:SetSolid(SOLID_VPHYSICS)
+	self:SetUseType(3)
 
-end
-
-function ENT:Think()
+	local phys = self:GetPhysicsObject()
+		if phys:IsValid() then
+		phys:Wake()
+	end
 end
 
 function ENT:Use(a, c)
+	print("I am working.")
 end
 ---------------------------------------------------------------------------*/

@@ -1,10 +1,14 @@
+AddCSLuaFile()
+
 ENT.Type = "anim"
 ENT.Base = "base_gmodentity"
 ENT.PrintName = "Money Printer"
 ENT.Author = "Bagszy"
 ENT.Spawnable = true
-ENT.AdminSpawnable = false
+ENT.Category = "Bagszy's Stuff"
+
 ENT.PrntrCfg = {}
+
 
 --====Config====--
 ENT.PrntrCfg.Name = "Money Printer"
@@ -13,7 +17,7 @@ ENT.PrntrCfg.ModelColor = Color(168, 168, 168, 255)
 
 ENT.PrntrCfg.ModelMaterial = "models/debug/debugwhite"
 
-ENT.PrntrCfg.DrawDistance = 100
+ENT.PrntrCfg.DrawDistance = 1500
 --==============--
 
 function ENT:SetupDataTables()
